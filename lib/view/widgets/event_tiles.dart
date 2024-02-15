@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:todo_list_g9/view/widgets/custom_text.dart';
 import 'package:todo_list_g9/view_model/event_view_model.dart';
 
 class EventTiles extends StatelessWidget {
@@ -25,25 +26,37 @@ class EventTiles extends StatelessWidget {
                       Expanded(
                         child: Container(
                           margin: const EdgeInsets.symmetric(horizontal: 20),
-                          child: Text(eventVM.items![index].name),
+                          child: CustomText(
+                            text: eventVM.items![index].name,
+                            textColor: Colors.white,
+                            textSize: 20,
+                          ),
                         ),
                       ),
                       Expanded(
                         child: Container(
                           margin: const EdgeInsets.symmetric(horizontal: 20),
-                          child: Text(eventVM.items![index].date),
+                          child: CustomText(
+                            text: eventVM.items![index].date,
+                            textColor: Colors.white,
+                            textSize: 15,
+                          ),
                         ),
                       ),
                       Expanded(
                         child: Container(
                           margin: const EdgeInsets.symmetric(horizontal: 20),
-                          child: Text(eventVM.items![index].note),
+                          child: CustomText(
+                            text: eventVM.items![index].note,
+                            textColor: const Color.fromARGB(255, 192, 192, 192),
+                            textSize: 17,
+                          ),
                         ),
                       ),
                       IconButton(
                         icon: const Icon(
                           Icons.delete,
-                          color: Colors.black,
+                          color: Color.fromARGB(255, 111, 111, 111),
                         ),
                         onPressed: () {
                           eventVM.removeEvent(index); //delete event

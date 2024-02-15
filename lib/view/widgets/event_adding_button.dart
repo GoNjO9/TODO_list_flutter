@@ -15,6 +15,8 @@ class _EventAddingButtonState extends State<EventAddingButton> {
   Widget build(BuildContext context) {
     return Consumer<EventViewModel>(
       builder: (context, eventVM, child) => FloatingActionButton(
+        backgroundColor: const Color.fromARGB(255, 111, 111, 111),
+        foregroundColor: const Color.fromARGB(255, 255, 255, 255),
         onPressed: () async {
           final map1 = await showBottomSheet(); //waiting for the input
           eventVM.addEvent(map1?['name'], map1?['date'], map1?['note']);
