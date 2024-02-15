@@ -74,7 +74,11 @@ class EventTiles extends StatelessWidget {
         }
       }
       return const Center(
-        child: Text('Add some new events...'),
+        child: CustomText(
+          text: 'Trivago',
+          textColor: Colors.white,
+          textSize: 120,
+        ),
       );
     });
   }
