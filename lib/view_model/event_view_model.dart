@@ -23,6 +23,7 @@ class EventViewModel with ChangeNotifier {
   void removeEvent(int index) {
     items!.removeAt(index);
     UserRepo.update(_user!);
+    notifyListeners();
   }
 
   void addEvent(String name, String date, String note) {
